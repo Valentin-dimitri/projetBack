@@ -1,41 +1,20 @@
 <?php
 
-   /*$prenom = 'Dimitri';
-   $nom = 'Valentin';
-   $age = 26;
+    session_start();
+    
+    if(isset($_POST['nom'])){
+        $_SESSION['nom']=$_POST['nom'];
+    }
 
-   $displayedText = "Bonjour {$prenom} {$nom}!";
 
-    $color;
+    $pageTilte = "Silence on lit";
+    $pageSubTilte = "Un temps de lecture à l'E2C";
 
-   if($age>30) {
-    $color = "blue";
-   } else {
-    $color = "pink";
-   }*/
 
+
+    $buttonList= [["label" => "Accueil",'url' => "../controller/home.php"],
+                  ["label" => "Bibliothèque",'url' => "../controller/books.php"]
+    ];
+   
+    require_once('../view/homeview.php');
 ?>
-
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silence on lit</title>
-    <link rel='stylesheet' href="../style/style.css">
-</head>
-<body>
-    <?php
-    require_once('../view/modules/header.php');
-    require_once('../view/modules/nav.php');
-
-    ?>
-
-  
-
-    <main>
-
-    </main>
-</body>
-</html>
